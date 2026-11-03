@@ -1,4 +1,5 @@
-"""Command-line interface for The Lost Lighthouse."""
+
+"""Command-line interface for Mystery Island: The Lost Lighthouse."""
 
 from game import (
     new_game,
@@ -13,9 +14,11 @@ from game import (
 
 def show_intro():
     """Display the game introduction."""
-    print("\n" + "=" * 40)
-    print("          THE LOST LIGHTHOUSE")
-    print("=" * 40)
+    print("\n" + "=" * 50)
+    print(" " * 12 + "MYSTERY ISLAND")
+    print(" " * 10 + "THE LOST LIGHTHOUSE")
+    print("=" * 50)
+
     print("\nA terrible storm has left you stranded on Mystery Island.")
     print("The lighthouse is dark, and a rescue boat is coming.")
     print("Find the necessary objects and restore the beacon.")
@@ -62,7 +65,9 @@ def play_game(name):
             for destination in destinations:
                 print(f"- {destination}")
 
-            destination = input("Where would you like to go? ").strip().title()
+            destination = input(
+                "Where would you like to go? "
+            ).strip().title()
 
             success, message = move_player(player, destination)
             print(message)
@@ -118,7 +123,7 @@ def main():
                 break
 
             if replay in ("no", "n"):
-                print("\nThank you for playing The Lost Lighthouse!")
+                print("\nThank you for playing Mystery Island: The Lost Lighthouse!")
                 return
 
             print("Please enter yes or no.")
